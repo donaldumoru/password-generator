@@ -4,6 +4,9 @@ const allCheckMarks = document.querySelectorAll('.check');
 const displayPassword = document.querySelector('#password-output');
 const generatePasswordBtn = document.querySelector('#generate-password');
 const copyPasswordBtn = document.querySelector('#copy-password');
+const displayPasswordLength = document.querySelector(
+  '.display-password-length'
+);
 
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -33,6 +36,12 @@ const checkBoxes = function (array) {
 };
 
 let passwordInput = document.querySelector('#password-length');
+
+passwordInput.addEventListener(
+  'change',
+  () =>
+    (displayPasswordLength.textContent = `Password Length: ${passwordInput.value}`)
+);
 
 const passwordLengthValue = function () {
   return Number(passwordInput.value);
