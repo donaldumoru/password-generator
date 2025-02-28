@@ -115,6 +115,7 @@ input[type='number'] {
   .password-generator-container {
     width: 90%;
     gap: 30px;
+    margin-bottom: 50px;
   }
 
   .password-generator-top,
