@@ -27,15 +27,21 @@
         <div class="password-custom-container">
           <div class="password-length-wrapper">
             <label for="password-length">Password Length:</label>
-            <input
+            <!-- <input
               type="number"
               id="password-length"
               min="8"
               max="15"
               value="10"
-            />
+            /> -->
 
-            <p id="password-length-msg"></p>
+            <input
+              type="range"
+              id="password-length"
+              min="8"
+              max="15"
+              value="10"
+            />
           </div>
 
           <div class="password-options-wrapper">
