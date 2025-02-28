@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.password-generator-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.password-generator-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 35px;
+  border-radius: 30px 30px 15px 15px;
+  box-shadow: 2px 7px 20px #2e2e2e;
+}
+
+#password-output {
+  border: none;
+  font-size: 3rem;
+}
+
+#password-output:focus {
+  outline: none;
+}
+
+.password-generator-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 35px;
+  gap: 40px;
+  border-radius: 15px 15px 30px 30px;
+  box-shadow: 2px 7px 20px #2e2e2e;
+}
+
+.info-wrapper {
+  border-bottom: 2px solid #2e2e2e2d;
+  padding-bottom: 10px;
+}
+
+.info-wrapper p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #505050;
+}
+
+.password-custom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icons img {
+  width: 30px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.icons img:hover {
+  transform: scale(1.2);
+}
+
+.password-options-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+}
+
+input[type='number'] {
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 15px 15px 20px 20px;
+}
+
+.password-options-wrapper label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .password-generator-container {
+    width: 90%;
+    gap: 30px;
+  }
+
+  .password-generator-top,
+  .password-generator-bottom {
+    padding: 20px;
+    box-shadow: 1px 4px 15px #2e2e2e;
+  }
+
+  #password-output {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  .icons {
+    gap: 10px;
+  }
+
+  .icons img {
+    width: 25px;
+  }
+
+  .info-wrapper p {
+    font-size: 1.5rem;
+  }
+
+  .password-custom-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .password-options-wrapper {
+    gap: 15px;
+  }
+
+  input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+  }
+
+  input[type='number'] {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .password-options-wrapper label {
+    gap: 8px;
+    font-size: 1rem;
+  }
+}
