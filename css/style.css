@@ -12,6 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 .password-generator-container {
@@ -147,6 +148,10 @@ input[type='number'] {
 
   .password-options-wrapper {
     gap: 15px;
+  }
+
+  .password-length-wrapper {
+    width: 100%;
   }
 
   input[type='checkbox'] {
