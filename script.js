@@ -7,11 +7,12 @@ const copyPasswordBtn = document.querySelector('#copy-password');
 const displayPasswordLength = document.querySelector(
   '.display-password-length'
 );
-
+let strengthIndicator = document.querySelector('.password-strength');
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const numbers = '0123456789'.split('');
 const specialCharacters = '!@#$%^&*()-_=+[]{}|;:\'",.<>?/`~'.split('');
+let passwordInput = document.querySelector('#password-length');
 
 const charactersArray = [
   uppercaseLetters,
@@ -19,10 +20,8 @@ const charactersArray = [
   numbers,
   specialCharacters,
 ];
-
 const checkAgainst = Array.from(charactersArray);
-
-let passwordArr = [];
+let password = '';
 
 const checkBoxes = function (array) {
   if (!charactersArray.includes(array)) {
@@ -34,8 +33,6 @@ const checkBoxes = function (array) {
     );
   }
 };
-
-let passwordInput = document.querySelector('#password-length');
 
 passwordInput.addEventListener(
   'change',
@@ -60,12 +57,12 @@ allCheckMarks.forEach((checkmark, index) => {
 
 const generatePassword = function (arr) {
   let passwordLength = passwordLengthValue();
-  passwordArr = [];
+  password = '';
 
   if (charactersArray.length === 0) {
     displayPassword.value = 'Select at least one option';
   } else {
-    while (passwordArr.length < passwordLength) {
+    while (password.length < passwordLength) {
       const getElement = function () {
         let characterIndex = Math.floor(Math.random() * arr.length);
         let elementIndex = Math.floor(
@@ -76,22 +73,16 @@ const generatePassword = function (arr) {
       };
 
       let charEl = getElement();
-
-      passwordArr.slice(-1).join('') === charEl
-        ? getElement()
-        : passwordArr.push(charEl);
+      password.slice(-1) === charEl ? getElement() : (password += charEl);
     }
 
-    displayPassword.value = passwordArr.join('');
+    displayPassword.value = password;
   }
 };
-
 generatePassword(charactersArray);
 
 const copyPassword = function () {
-  navigator.clipboard.writeText(passwordArr.join(''));
-  // alert(`Password copied to clipboard`);
-
+  navigator.clipboard.writeText(password.join(''));
   console.log('copied');
 };
 
@@ -100,3 +91,13 @@ generatePasswordBtn.addEventListener('click', () =>
 );
 
 copyPasswordBtn.addEventListener('click', copyPassword);
+
+// const checkPasswordStrength = function (arr) {
+//   console.log(arr.length);
+
+//   // if(arr.length === 8 && !arr.includes())
+// };
+
+// checkPasswordStrength(password);
+
+// const veryWeak = [arr.length === 8, arr.every(el=> el = ''), ];

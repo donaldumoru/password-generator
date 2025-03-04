@@ -22,14 +22,36 @@ body {
   gap: 50px;
 }
 
-.password-generator-top {
+/* .password-generator-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px 35px;
   border-radius: 30px 30px 15px 15px;
   box-shadow: 2px 7px 20px #2e2e2e;
+
+  transition: 0.3s all;
+} */
+
+.password-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 35px;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 2px 7px 20px #2e2e2e;
+  transition: 0.3s all;
 }
+
+/* .password-generator-top::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #49a03d;
+} */
 
 #password-output {
   border: none;
@@ -38,6 +60,12 @@ body {
 
 #password-output:focus {
   outline: none;
+}
+
+.password-strength {
+  height: 10px;
+  background-color: green;
+  border-radius: 0px 0px 30px 30px;
 }
 
 .password-generator-bottom {
@@ -99,10 +127,8 @@ input[type='checkbox'] {
   height: 20px;
 }
 
-input[type='number'] {
-  padding: 10px;
-  font-size: 1.1rem;
-  border-radius: 15px 15px 20px 20px;
+input[type='range'] {
+  cursor: pointer;
 }
 
 .password-options-wrapper label {
