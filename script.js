@@ -82,7 +82,7 @@ const generatePassword = function (arr) {
 generatePassword(charactersArray);
 
 const copyPassword = function () {
-  navigator.clipboard.writeText(password.join(''));
+  navigator.clipboard.writeText(password);
   console.log('copied');
 };
 
